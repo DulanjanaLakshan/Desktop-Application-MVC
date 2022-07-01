@@ -1,0 +1,61 @@
+DROP DATABASE IF EXISTS company;
+CREATE DATABASE company;
+USE company;
+
+#---------------------
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer(
+   cust_id VARCHAR(6) NOT NULL,
+   cust_name VARCHAR(45),
+   cust_address TEXT,
+   customer_tp VARCHAR(20),
+   email VARCHAR(20),
+   CONSTRAINT PRIMARY KEY (cust_id)
+   
+);
+SHOW TABLES ;
+DESCRIBE Customer;
+#---------------------
+
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE IF NOT EXISTS Orders(
+   orderId VARCHAR(6) NOT NULL,
+   cust_id VARCHAR(6) NOT NULL,
+   order_Date DATE,
+   price DOUBLE DEFAULT 0.00,
+   CONSTRAINT PRIMARY KEY (orderId),
+   CONSTRAINT FOREIGN KEY (cust_id) REFERENCES Customer(cust_id) ON DELETE CASCADE ON UPDATE CASCADE
+   );
+SHOW TABLES ;
+DESCRIBE Orders;
+#---------------------
+DROP TABLE IF EXISTS Item;
+CREATE TABLE IF NOT EXISTS Item(
+   item_code VARCHAR(6) NOT NULL,
+   item_name VARCHAR(15), 
+   description VARCHAR(50) NOT NULL,
+   qtyOnHand INT DEFAULT 0,
+   unitPrice DOUBLE DEFAULT 0.00,
+   
+   CONSTRAINT PRIMARY KEY (item_code)
+   
+);
+SHOW TABLES ;
+DESCRIBE  Item;
+#---------------------
+
+DROP TABLE IF EXISTS Order_Detail;
+CREATE TABLE IF NOT EXISTS Order_Detail(
+   orderId VARCHAR(6) NOT NULL,  
+   item_code VARCHAR(6) NOT NULL,
+   orderQty INT NOT NULL,
+   discount DOUBLE DEFAULT 0.00,
+   CONSTRAINT PRIMARY KEY (orderId , item_code),
+ CONSTRAINT FOREIGN KEY (orderId) REFERENCES Orders(orderId) ON DELETE CASCADE ON UPDATE CASCADE,
+   CONSTRAINT FOREIGN KEY (item_code) REFERENCES Item(item_code) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES ;
+DESCRIBE Order_Detail;
+
+#---------------------

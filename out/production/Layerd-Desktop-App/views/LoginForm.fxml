@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="LoginContext" prefHeight="467.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="126.0" fitWidth="123.0" layoutX="145.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon/user.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="172.0" layoutY="119.0" prefHeight="36.0" prefWidth="79.0" text="Login ">
+         <font>
+            <Font name="Calibri Bold" size="31.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtusername" labelFloat="true" layoutX="62.0" layoutY="201.0" onAction="#usernameOnAction" prefHeight="36.0" prefWidth="300.0" promptText="UserName">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtpass" labelFloat="true" layoutX="62.0" layoutY="287.0" onAction="#passwordOnAction" prefHeight="25.0" prefWidth="300.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton layoutX="186.0" layoutY="381.0" onAction="#loginOnAction" text="login">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+   </children>
+</AnchorPane>

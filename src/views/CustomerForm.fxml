@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainContext" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+   <children>
+      <TextField fx:id="txtCustomerId" layoutX="64.0" layoutY="98.0" onAction="#idOnAction" prefHeight="34.0" prefWidth="163.0" promptText="Enter Customer Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCustomerName" layoutX="64.0" layoutY="169.0" onAction="#customernameOnAction" prefHeight="34.0" prefWidth="253.0" promptText="Enter Customer Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCustomerAddress" layoutX="353.0" layoutY="98.0" onAction="#addressOnAction" prefHeight="34.0" prefWidth="787.0" promptText="Enter Customer Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCustomerNo" layoutX="333.0" layoutY="169.0" onAction="#contactOnAction" prefHeight="34.0" prefWidth="222.0" promptText="Enter Customer Contact Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCustomerEmail" layoutX="564.0" layoutY="169.0" prefHeight="34.0" prefWidth="247.0" promptText="Enter Customer Email Addres">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="14.0" layoutY="234.0" prefHeight="0.0" prefWidth="1166.0" />
+      <TableView fx:id="tblCustomer" layoutX="46.0" layoutY="250.0" prefHeight="424.0" prefWidth="1113.0">
+        <columns>
+          <TableColumn fx:id="colId" text="Customer ID" />
+          <TableColumn fx:id="colName" prefWidth="221.0" text="Customer Name" />
+            <TableColumn fx:id="colAddress" prefWidth="382.0" text="Customer Addres" />
+            <TableColumn fx:id="colNumber" prefWidth="192.0" text="Customer Contact Number" />
+            <TableColumn fx:id="colEmail" prefWidth="237.0" text="Customer Email" />
+        </columns>
+      </TableView>
+      <Label layoutX="409.0" layoutY="14.0" text="Welecome To Customer Form">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Separator layoutX="458.0" layoutY="53.0" prefHeight="3.0" prefWidth="273.0" />
+      <JFXButton layoutX="823.0" layoutY="169.0" onAction="#btnSaveCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="937.0" layoutY="169.0" onAction="#btnUpdateCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1046.0" layoutY="169.0" onAction="#btnDeleteCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1143.0" layoutY="21.0" onAction="#backOnAction" prefHeight="25.0" prefWidth="32.0" ripplerFill="#320202" text="&lt;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="239.0" layoutY="98.0" onAction="#serchCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: orange;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MainContext" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeFormController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="183.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon/customer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon/product.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="869.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon/join.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="299.0" layoutY="92.0" text="Welcome To  Ceylon Products">
+         <font>
+            <Font name="System Bold" size="43.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="195.0" layoutY="442.0" onAction="#btnCustomer" prefHeight="49.0" prefWidth="127.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="537.0" layoutY="442.0" onAction="#btnItem" prefHeight="49.0" prefWidth="127.0" text="Item">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="880.0" layoutY="442.0" onAction="#userButton" prefHeight="49.0" prefWidth="127.0" text="User">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
+   </children>
+</AnchorPane>

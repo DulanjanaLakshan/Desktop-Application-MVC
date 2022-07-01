@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
+   <children>
+      <Label layoutX="528.0" layoutY="30.0" text="DashBoard">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="158.0" layoutY="175.0" text="Customer info">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="563.0" layoutY="175.0" text="item info">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="894.0" layoutY="175.0" text="Place order info">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtcustId" alignment="CENTER" labelFloat="true" layoutX="94.0" layoutY="263.0" onAction="#customerSearchOnAction" prefHeight="25.0" prefWidth="215.0" promptText="Customer ID" />
+      <JFXTextField fx:id="txtcustname" layoutX="94.0" layoutY="313.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtcustAddress" layoutX="94.0" layoutY="363.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtcusttp" layoutX="94.0" layoutY="407.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtcustemail" layoutX="94.0" layoutY="459.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtItemId" alignment="CENTER" labelFloat="true" layoutX="493.0" layoutY="265.0" onAction="#itemSearchOnAction" prefHeight="25.0" prefWidth="215.0" promptText="Item Id" />
+      <JFXTextField fx:id="txtItemBrand" layoutX="493.0" layoutY="315.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtItemdiscription" layoutX="493.0" layoutY="365.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtItemqtyonHand" layoutX="493.0" layoutY="409.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtItemIdUnitPrice" layoutX="493.0" layoutY="461.0" prefHeight="25.0" prefWidth="215.0" />
+      <JFXTextField fx:id="txtaddQty" alignment="CENTER" layoutX="853.0" layoutY="267.0" onAction="#addQtyOnAction" prefHeight="25.0" prefWidth="215.0" promptText="Order Qty" />
+      <JFXTextField fx:id="txtTotal" alignment="CENTER" layoutX="853.0" layoutY="362.0" prefHeight="25.0" prefWidth="215.0" promptText="total" />
+      <JFXTextField fx:id="txtcash" alignment="CENTER" layoutX="853.0" layoutY="412.0" onAction="#calculateBalsance" prefHeight="25.0" prefWidth="215.0" promptText="cash" />
+      <JFXTextField fx:id="txtbalance" alignment="CENTER" layoutX="853.0" layoutY="456.0" prefHeight="25.0" prefWidth="215.0" promptText="balance" />
+      <JFXButton layoutX="331.0" layoutY="262.0" onAction="#AddCustomerForm" prefHeight="28.0" prefWidth="97.0" style="-fx-border-color: green;" text="Add Customer" />
+      <JFXButton layoutX="1099.0" layoutY="263.0" onAction="#addToTableAction" style="-fx-border-color: blue;" text="Add">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="853.0" layoutY="325.0" onAction="#removeOnAction" style="-fx-border-color: red;" text="remove">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1000.0" layoutY="325.0" onAction="#placeOrderOnAction" style="-fx-border-color: orange;" text="place order">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="498.0" layoutY="96.0" text="Order Code :">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbOrderId" layoutX="606.0" layoutY="96.0" prefHeight="28.0" prefWidth="85.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="110.0" text="Time :">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbtime" layoutX="196.0" layoutY="110.0" prefHeight="28.0" prefWidth="97.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="885.0" layoutY="96.0" text="Date :">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbdate" layoutX="939.0" layoutY="96.0" prefHeight="28.0" prefWidth="145.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="1149.0" layoutY="21.0" onAction="#backButton" text="&lt;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tbOrderDetail" layoutX="297.0" layoutY="515.0" prefHeight="163.0" prefWidth="533.0">
+        <columns>
+          <TableColumn fx:id="tbId" prefWidth="123.0" text="ID" />
+          <TableColumn fx:id="tbOrderQty" prefWidth="208.0" text="Order Qty" />
+            <TableColumn fx:id="tbDiscount" prefWidth="201.0" text="Discount" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

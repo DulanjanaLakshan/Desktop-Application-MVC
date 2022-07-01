@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainContext" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemFormController">
+   <children>
+      <TextField fx:id="txtCode" layoutX="64.0" layoutY="98.0" onAction="#idOnAction" prefHeight="34.0" prefWidth="163.0" promptText="Enter Item Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtName" layoutX="64.0" layoutY="169.0" onAction="#brandOnAction" prefHeight="34.0" prefWidth="319.0" promptText="Enter Item Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDescription" layoutX="364.0" layoutY="98.0" onAction="#descriptionOnAction" prefHeight="34.0" prefWidth="778.0" promptText="Enter Item Description">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQty" layoutX="393.0" layoutY="169.0" onAction="#qtyOnHand" prefHeight="34.0" prefWidth="222.0" promptText="Enter Item QTY">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPrice" layoutX="623.0" layoutY="169.0" prefHeight="34.0" prefWidth="187.0" promptText="Enter Item Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="14.0" layoutY="234.0" prefHeight="0.0" prefWidth="1166.0" />
+      <TableView fx:id="tblItem" layoutX="46.0" layoutY="250.0" prefHeight="424.0" prefWidth="1113.0">
+        <columns>
+          <TableColumn fx:id="colCode" text="Item ID" />
+          <TableColumn fx:id="colName" prefWidth="274.0" text="Item Name" />
+            <TableColumn fx:id="colDescription" prefWidth="454.0" text="Item Description" />
+            <TableColumn fx:id="colQty" prefWidth="132.0" text="Item QTY" />
+            <TableColumn fx:id="colPrice" prefWidth="172.0" text="Item Price" />
+        </columns>
+      </TableView>
+      <Label layoutX="439.0" layoutY="15.0" text="Welecome To Item Form">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Separator layoutX="458.0" layoutY="53.0" prefHeight="3.0" prefWidth="273.0" />
+      <JFXButton fx:id="btnSearchCustomer" layoutX="241.0" layoutY="98.0" onAction="#btnSearchCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: orange;" text="search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="937.0" layoutY="169.0" onAction="#btnUpdateCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1046.0" layoutY="169.0" onAction="#btnDeleteCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="39.0" fitWidth="32.0" layoutX="1127.0" layoutY="18.0" onMouseClicked="#btnBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon/back.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnSaveCustomer1" layoutX="828.0" layoutY="169.0" onAction="#btnSaveCustomer" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
